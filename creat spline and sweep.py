@@ -14,10 +14,6 @@ arrayOfVariantOfDouble1 = [0,0,0,0,1,0,0,0,1]
 sketch1.SetAbsoluteAxisData(arrayOfVariantOfDouble1)
 
 factory2D1 = sketch1.openedition()
-geometricElements1 = sketch1.GeometricElements
-axis2D1 = geometricElements1.Item("绝对轴")
-line2D1 = axis2D1.GetItem("横向")
-line2D2 = axis2D1.GetItem("纵向")
 
 # 批量实例化控制点,并将其添加到controlpoint2D列表中
 arrayOfObject1 = []
