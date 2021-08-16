@@ -1,4 +1,5 @@
 import win32com.client
+from array import *
 catia = win32com.client.Dispatch("catia.application")
 partdocument1 = catia.documents.add("Part")
 part1 = partdocument1.part
@@ -39,10 +40,12 @@ for i in range(control_point_num-1,-1,-1):
     controlpoint2D.append(factory2D1.createcontrolpoint(controlpoints_data[i][0],controlpoints_data[i][1]))
 #使用控制点列表作为参数实例化样条曲线
 spline2D1 = factory2D1.createspline(controlpoint2D)
+""" controlpoint2D[-1].settangent(1,1)
+print(controlpoint2D[-1].curvature) """
 
 #获得控制点个数
-""" num = spline2D1.getnumberofcontrolpoints()
-print(num) """
+num = spline2D1.getnumberofcontrolpoints()
+print(num)
 
 #获得曲线结束点
 """ endpoint = spline2D1.endpoint
